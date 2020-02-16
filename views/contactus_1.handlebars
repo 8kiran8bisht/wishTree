@@ -1,0 +1,31 @@
+<form action="/contactus" method="POST">
+    <lable>Create account</lable>
+    <br><br>
+    <div class="error">{{e_firstName}}</div>
+    
+        <lable id="firstName">First Name</lable>
+        <input type="name" id="firstName" name="firstName" value="{{firstName}}">
+    <br><br>
+    <div class="error">{{e_lastName}}</div>
+    
+        <lable id="lastName">Last Name</lable>
+        <input type="text" id="lastName" name="lastName" value="{{lastName}}">
+    <br><br>
+    <div class="error">{{e_email}}</div>
+    
+        <lable id="email">Email</lable>
+        <input type="text" id="email" name="email" value{{email}}>
+    <br> <br>
+    <div class="error">{{e_phoneno}}</div>
+   
+        <lable id="phoneno">Phone no</lable>
+        <input type="text" id="phoneno" name="phoneno" value="{{phoneno}}">
+    <br>
+    
+    <br>
+         <input type="submit" value="Create your WishTree account">
+    <br>
+    <br>
+    Already have an account ? <a href="#" >Sign in</a>
+
+</form>

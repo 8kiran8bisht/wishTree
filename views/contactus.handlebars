@@ -1,0 +1,55 @@
+
+<div class="registrationBox">
+    
+<form action="/contactus" method="POST">
+
+    <div class="error">{{message}}</div>
+    <br>
+    <lable></lable>
+    <h1>Create an account</h1>
+    <br>
+    
+    <div class="error">{{e_firstName}}</div>
+    
+        <lable id="firstName"><strong>Name</strong> </lable>
+        <input type="name" id="firstName" name="firstName" tabindex=0 autofocus="on" value="{{firstName}}">
+    <br>
+    <div class="error">{{e_lastName}}</div>
+    
+        <lable id="lastName"><strong>Last Name</strong></lable>
+        <input type="text" id="lastName" name="lastName" tabindex=0 autofocus="on" value="{{lastName}}">
+    <br>
+    <div class="error">{{e_email}}</div>
+    
+        <lable id="email"><strong>Email</strong></lable>
+        <input type="text" id="email" name="email" tabindex=0 autofocus="on" value="{{email}}">
+    <br>
+    <div class="error">{{e_password}}</div>
+    
+        <lable id="password"><strong>Password</strong></lable>
+        <input type="password" id="password" name="password" tabindex=0 autofocus="on" value="{{password}}">
+    <br>
+    <div class="error">{{e1_password}}</div>
+    
+        <lable id="password"><strong>Re Enter Password</strong></lable>
+        <input type="password" id="r_password" name="r_password" tabindex=0 autofocus="on" >
+    <br>
+    
+    <div class="error">{{e_phoneno}}</div>
+   
+        <lable id="phoneno"><strong>Phone no</strong></lable>
+        <input type="text" id="phoneno" name="phoneno" tabindex=0 autofocus="on" value="{{phoneno}}">
+    <br>
+    <lable></lable>
+    <br>
+         <input type="submit" class="btn1" tabindex=0 value="Create your WishTree account">
+    <br>
+    <lable></lable>
+    <br>
+        <p>Already have an account ? <a href="/signIn" >Sign in</a></p>
+    <br>
+    <br>
+   
+
+</form>
+</div>
