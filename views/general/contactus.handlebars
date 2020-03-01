@@ -1,7 +1,7 @@
 
 <div class="registrationBox">
     
-<form action="/contactus" method="POST">
+<form action="/general/contactus" method="POST">
 
     <div class="error">{{message}}</div>
     <br>
@@ -22,7 +22,7 @@
     <div class="error">{{e_email}}</div>
     
         <lable id="email"><strong>Email</strong></lable>
-        <input type="text" id="email" name="email" tabindex=0 autofocus="on" value="{{email}}">
+        <input type="text" id="email" name="email" tabindex=0 placeholder="e.g. abc@xyz.com" autofocus="on" value="{{email}}">
     <br>
     <div class="error">{{e_password}}</div>
     
@@ -32,7 +32,7 @@
     <div class="error">{{e1_password}}</div>
     
         <lable id="password"><strong>Re Enter Password</strong></lable>
-        <input type="password" id="r_password" name="r_password" tabindex=0 autofocus="on" >
+        <input type="password" id="r_password" name="r_password" tabindex=0 autofocus="on" value="{{rpassword}}" >
     <br>
     
     <div class="error">{{e_phoneno}}</div>

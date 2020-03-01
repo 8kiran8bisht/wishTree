@@ -6,12 +6,12 @@
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
             
             <title>{{title}}</title>
-            <link rel="stylesheet" href="css/style.css">
+            <link rel="stylesheet" href="{{css}}">
         </head>
           <body>
               
               <div class="wrapper">
-                   
+                 <h2 style="color: red;"><strong>{{message}}</strong></h2>
                  <nav class="main-nav">
                 
                 <ul>
@@ -22,14 +22,14 @@
                         <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="/products">Products</a>
+                        <a href="/product/products">Products</a>
                     </li>
                     <li>
-                        <a href="/contactus">Create Account</a>
+                        <a href="/general/contactus">Create Account</a>
                     </li>
                     
                     <li>
-                        <a href="/signin">Sign in</a>
+                        <a href="/general/signin">Sign in</a>
                     </li>
                     <li>
                         <a href="">About Us</a>
@@ -38,7 +38,7 @@
                 </ul>
 
             </nav>
-    
+            
              
               {{{body}}}
               </div>

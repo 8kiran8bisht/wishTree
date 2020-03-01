@@ -8,8 +8,8 @@ const products=
         this.productDB.push(
             {
                 category:`Baby-Care`,
-                page:`/babyCare`,
-                img:`img/b2.PNG`,
+                page:`/product/babyCare`,
+                img:`../img/b2.PNG`,
                 price:150,
                 onHome:0,
                 promotion:0,
@@ -19,8 +19,8 @@ const products=
             this.productDB.push(
                 {
                     category:`Baby-Care`,
-                    page:`/babyCare`,
-                    img:`img/b0.jpg`,
+                    page:`/product/babyCare`,
+                    img:`../img/b0.jpg`,
                     price:100,
                     onHome:1,
                     promotion:0,
@@ -30,8 +30,8 @@ const products=
         this.productDB.push(
             {
                 category:`Baby-Care`,
-                page:`/babyCare`,
-                img:`img/b3.PNG`,
+                page:`/product/babyCare`,
+                img:`../img/b3.PNG`,
                 price:400,
                 onHome:0,
                 promotion:0,
@@ -41,8 +41,8 @@ const products=
         this.productDB.push(
             {
                 category:`Baby-Care`,
-                page:`/babyCare`,
-                img:`img/b4.PNG`,
+                page:`/product/babyCare`,
+                img:`../img/b4.PNG`,
                 price:100,
                 onHome:0,
                 promotion:0,
@@ -52,8 +52,8 @@ const products=
         this.productDB.push(
             {
                 category:`Baby-Care`,
-                page:`/babyCare`,
-                img:`img/b5.PNG`,
+                page:`/product/babyCare`,
+                img:`../img/b5.PNG`,
                 price:80,
                 onHome:0,
                 promotion:1,
@@ -63,8 +63,8 @@ const products=
         this.productDB.push(
             {
                 category:`Baby-Care`,
-                page:`/babyCare`,
-                img:`img/b6.PNG`,
+                page:`/product/babyCare`,
+                img:`../img/b6.PNG`,
                 price:120,
                 onHome:0,
                 promotion:1,
@@ -74,8 +74,8 @@ const products=
             this.productDB.push(
                 {
                 category:`Baby-Care`,
-                page:`/babyCare`,
-                img:`img/b1.PNG`,
+                page:`/product/babyCare`,
+                img:`../img/b1.PNG`,
                 price:60,
                 onHome:0,
                 promotion:1,
@@ -85,7 +85,7 @@ const products=
         this.productDB.push(
             {
             category:`Electronics`,
-            img:`img/e2.PNG`,
+            img:`../img/e2.PNG`,
             price:200,
             onHome:0,
             promotion:0,
@@ -96,8 +96,8 @@ const products=
         this.productDB.push(
             {
             category:`Valentine's Day`,
-            page:`/valentine`,
-            img:`img/v0.jpg`,
+            page:`/product/valentine`,
+            img:`../img/v0.jpg`,
             price:100,
             onHome:1,
             promotion:0,
@@ -107,8 +107,8 @@ const products=
         this.productDB.push(
             {
             category:`Valentine's Day`,
-            page:`/valentine`,
-            img:`img/v1.jpg`,
+            page:`/product/valentine`,
+            img:`../img/v1.jpg`,
             price:100,
             onHome:0,
             promotion:0,
@@ -118,8 +118,8 @@ const products=
         this.productDB.push(
             {
             category:`Valentine's Day`,
-            page:`/valentine`,
-            img:`img/v2.jpg`,
+            page:`/product/valentine`,
+            img:`../img/v2.jpg`,
             price:1000,
             onHome:0,
             promotion:0,
@@ -130,8 +130,8 @@ const products=
         this.productDB.push(
             {
             category:`Valentine's Day`,
-            page:`/valentine`,
-            img:`img/v3.jpg`,
+            page:`/product/valentine`,
+            img:`../img/v3.jpg`,
             price:200,
             onHome:0,
             promotion:0,
@@ -142,8 +142,8 @@ const products=
         this.productDB.push(
             {
             category:`Valentine's Day`,
-            page:`/valentine`,
-            img:`img/v4.jpg`,
+            page:`/product/valentine`,
+            img:`../img/v4.jpg`,
             promotion:0,
             price:50,
             onHome:0,
@@ -153,8 +153,8 @@ const products=
         this.productDB.push(
             {
             category:`Valentine's Day`,
-            page:`/valentine`,
-            img:`img/v5.jpg`,
+            page:`/product/valentine`,
+            img:`../img/v5.jpg`,
             price:100,
             onHome:0,
             promotion:0,
@@ -164,8 +164,8 @@ const products=
         this.productDB.push(
             {
             category:`Promotion`,
-            page:`/promotion`,
-            img:`img/s00.jpg`,
+            page:`/product/promotion`,
+            img:`../img/s00.jpg`,
             promotion:0,
             onHome:0,
             bestSeller:1,
@@ -175,9 +175,9 @@ const products=
         this.productDB.push(
             {
             category:`Promotion`,
-            page:`/promotion`,
+            page:`/product/promotion`,
             onHome:0,
-            img:`img/s01.jpg`,
+            img:`../img/s01.jpg`,
             promotion:0,
             bestSeller:1,
             price:250,
@@ -186,8 +186,8 @@ const products=
         this.productDB.push(
             {
             category:`Promotion`,
-            page:`/promotion`,
-            img:`img/c1.jpg`,
+            page:`/product/promotion`,
+            img:`../img/c1.jpg`,
             promotion:1,
             bestSeller:0,
             price:50,
@@ -196,8 +196,8 @@ const products=
         this.productDB.push(
             {
             category:`Promotion`,
-            page:`/promotion`,
-            img:`img/c4.jpg`,
+            page:`/product/promotion`,
+            img:`../img/c4.jpg`,
             promotion:1,
             bestSeller:0,
             price:80,
@@ -206,8 +206,8 @@ const products=
         this.productDB.push(
             {
             category:`Promotion`,
-            page:`/promotion`,
-            img:`img/s02.jpg`,
+            page:`/product/promotion`,
+            img:`../img/s02.jpg`,
             promotion:0,
             onHome:0,
             bestSeller:1,
@@ -217,14 +217,14 @@ const products=
         this.productDB.push(
             {
             category:`Baby-Care`,
-            img:`img/b1.PNG`,
+            img:`../img/b1.PNG`,
             price:100,
             }
         );                        
         this.productDB.push(
             {
             category:`Electronics`,
-            img:`img/e.PNG`,
+            img:`../img/e.PNG`,
             onHome:0,
             promotion:1,
             bestseller:0,
@@ -235,8 +235,8 @@ const products=
         this.productDB.push(
             {
             category:`Electronics`,
-            page:`/electronics`,
-            img:`img/e3.PNG`,
+            page:`/product/electronics`,
+            img:`../img/e3.PNG`,
             price:150,
             onHome:0,
             promotion:1,
@@ -247,8 +247,8 @@ const products=
         this.productDB.push(
             {
             category:`Electronics`,
-            page:`/electronics`,
-            img:`img/e4.PNG`,
+            page:`/product/electronics`,
+            img:`../img/e4.PNG`,
             price:200,
             onHome:0,
             promotion:1,
@@ -258,8 +258,8 @@ const products=
         this.productDB.push(
             {
             category:`Electronics`,
-            page:`/electronics`,
-            img:`img/e5.PNG`,
+            page:`/product/electronics`,
+            img:`../img/e5.PNG`,
             price:700,
             onHome:0,
             promotion:1,
@@ -269,8 +269,8 @@ const products=
         this.productDB.push(
             {
             category:`Electronics`,
-            page:`/electronics`,
-            img:`img/e6.PNG`,
+            page:`/product/electronics`,
+            img:`../img/e6.PNG`,
             price:500,
             onHome:0,
             promotion:1,
@@ -280,8 +280,8 @@ const products=
         this.productDB.push(
             {
             category:`Electronics`,
-            page:`/electronics`,
-            img:`img/E0.jpg`,
+            page:`/product/electronics`,
+            img:`../img/E0.jpg`,
             price:500,
             onHome:1,
             promotion:0,
@@ -291,8 +291,8 @@ const products=
         this.productDB.push(
             {
             category:`Shoes`,
-            page:`/shoes`,
-            img:`img/s1.PNG`,
+            page:`/product/shoes`,
+            img:`../img/s1.PNG`,
             price:100,
             onHome:0,
             promotion:0,
@@ -302,8 +302,8 @@ const products=
         this.productDB.push(
             {
             category:`Shoes`,
-            page:`/shoes`,
-            img:`img/s2.PNG`,
+            page:`/product/shoes`,
+            img:`../img/s2.PNG`,
             price:80,
             onHome:0,
             promotion:1,
@@ -314,8 +314,8 @@ const products=
         this.productDB.push(
             {
             category:`Shoes`,
-            page:`/shoes`,
-            img:`img/s3.PNG`,
+            page:`/product/shoes`,
+            img:`../img/s3.PNG`,
             price:70,
             onHome:0,
             promotion:0,
@@ -326,8 +326,8 @@ const products=
         this.productDB.push(
             {
             category:`Shoes`,
-            page:`/shoes`,
-            img:`img/s0.jpg`,
+            page:`/product/shoes`,
+            img:`../img/s0.jpg`,
             price:120,
             onHome:1,
             promotion:0,
@@ -338,8 +338,8 @@ const products=
         this.productDB.push(
             {
             category:`Shoes`,
-            page:`/shoes`,
-            img:`img/s4.PNG`,
+            page:`/product/shoes`,
+            img:`../img/s4.PNG`,
             price:100,
             onHome:0,
             promotion:0,
@@ -350,8 +350,8 @@ const products=
         this.productDB.push(
             {
             category:`Shoes`,
-            page:`/shoes`,
-            img:`img/s5.PNG`,
+            page:`/product/shoes`,
+            img:`../img/s5.PNG`,
             price:110,
             onHome:0,
             promotion:0,
@@ -362,8 +362,8 @@ const products=
         this.productDB.push(
             {
             category:`Shoes`,
-            page:`/shoes`,
-            img:`img/s6.PNG`,
+            page:`/product/shoes`,
+            img:`../img/s6.PNG`,
             price:120,
             onHome:0,
             promotion:0,
