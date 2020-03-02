@@ -291,5 +291,9 @@ form {
         text-align: center;
         margin:auto;
     }
+    .registrationBox form{
+        grid-template-columns: 1fr;
+        min-width: 250px;
+    }
 }
 
