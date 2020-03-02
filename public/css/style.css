@@ -193,6 +193,7 @@ footer{
     margin-left: auto;
     margin-right: auto;
     
+    
 }
 .registrationBox{
   
@@ -226,6 +227,13 @@ footer{
        
 }
 .registrationBox input{
+    height: 30px;
+}
+.container-grid-loginBox label{
+    font-size: 0.8em;
+    font-weight:bold;
+}
+.container-grid-loginBox input{
     height: 30px;
 }
 .left-main-nav {

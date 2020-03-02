@@ -20,26 +20,23 @@ router.get("/general/signIn",(req,res)=>{
 });
 router.post("/general/signIn",(req,res)=>{
   let count=0;
-  let userId="";
+  let e_userId="";
   if(req.body.userId=="") {
       count++;
-      e_userId="*  enter your userId !";
+      e_userId="* Enter e-mail address or mobile phone number !";
  }
+
  if(count>0)
  {
      res.render('general/signIn',{
          title:"SignIn",
          css:"../css/style.css",
-        e_userId:e_userId,
+        e_message:e_userId,
 
   });
 }
-else
-      {
-          res.render('home',{
-              title:"Home",
-              css:"../css/style.css",
-          });
+else{
+        res.redirect("/");
       }
 });
 router.get("/general/contactus",(req,res)=>{
@@ -154,14 +151,7 @@ function passwordCheck(str) {
         
         sgMail.send(msg)
             .then(()=>{
-              res.render('general/home',{
-                title:"Home",
-                css:"../css/style.css",
-                products:productModel.getAllProducts(),
-                promotion:productModel.getAllPromotion(),
-                bestSeller:productModel.getBestSeller(),
-                message:`Welcome ${firstName}!`
-            });
+              res.redirect("/");
             })
             .catch(err=>{
                 console.log(`Error ${err}`);
