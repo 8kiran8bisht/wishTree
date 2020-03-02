@@ -150,6 +150,7 @@ function passwordCheck(str) {
         //Asynchronus operation:we dont know how much time it wii take
         
         sgMail.send(msg)
+        /*checking */
             .then(()=>{
               res.redirect("/");
             })
