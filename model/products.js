@@ -23,6 +23,7 @@ const products=
                     img:`../img/b0.jpg`,
                     price:100,
                     onHome:1,
+                    onProductList:1,
                     promotion:0,
                     bestseller:0,
                     description:` BreatheFrida The 3-in-1 Humidifier, Diffuser + Nightlight `
@@ -100,6 +101,7 @@ const products=
             img:`../img/v0.jpg`,
             price:100,
             onHome:1,
+            onProductList:1,
             promotion:0,
             bestSeller:1,
     
@@ -164,7 +166,7 @@ const products=
         this.productDB.push(
             {
             category:`Promotion`,
-            page:`/product/promotion`,
+            page:`/product/onPromotion`,
             img:`../img/s00.jpg`,
             promotion:0,
             onHome:0,
@@ -202,6 +204,20 @@ const products=
             bestSeller:0,
             price:80,
             description:'white women shoes'
+        });
+        this.productDB.push(
+            {
+            category:`Promotion`,
+            page:`/product/onPromotion`,
+            img:`../img/02.jpg`,
+            onProductList:1
+        });
+        this.productDB.push(
+            {
+            category:`Best Seller`,
+            page:`/product/bestSeller`,
+            img:`../img/b.jpg`,
+            onProductList:1 
         });
         this.productDB.push(
             {
@@ -284,6 +300,7 @@ const products=
             img:`../img/E0.jpg`,
             price:500,
             onHome:1,
+            onProductList:1,
             promotion:0,
             bestseller:0,
             description:` Xbox One Elite Series 2 Wireless Controller`
@@ -330,6 +347,7 @@ const products=
             img:`../img/s0.jpg`,
             price:120,
             onHome:1,
+            onProductList:1,
             promotion:0,
             bestseller:1,
             description:` converse(Sole:rubber  Material:fabric)`
@@ -371,6 +389,18 @@ const products=
             description:` Fila ( Sole:rubber  Material: Leather)`
             }
         );                                               
+    },
+    getProductList(){
+        arrHommePage=[];
+        arrHommePage=[];
+        this.productDB.forEach(element=>{
+            if(element.onProductList==1)
+            arrHommePage.push(element);
+        }
+
+        )
+        return arrHommePage;
+
     },
     getAllProducts()
     {

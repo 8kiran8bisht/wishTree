@@ -32,7 +32,7 @@ router.get("/product/products",(req,res)=>{
     res.render('product/products',{
         title:"Products",
         css:"../css/style.css",
-        products:productModel.getAllProducts(),
+        products:productModel.getProductList(),
         nav:nav
        
     });

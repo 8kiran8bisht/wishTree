@@ -21,10 +21,18 @@ router.get("/general/signIn",(req,res)=>{
 router.post("/general/signIn",(req,res)=>{
   let count=0;
   let e_userId="";
+  let e_password="";
+  let userId="";
+  let password="";
   if(req.body.userId=="") {
       count++;
       e_userId="* Enter e-mail address or mobile phone number !";
  }
+ if(req.body.password=="") {
+  count++;
+  e_password="* Enter password !";
+}
+
 
  if(count>0)
  {
@@ -32,7 +40,10 @@ router.post("/general/signIn",(req,res)=>{
          title:"SignIn",
          css:"../css/style.css",
         e_message:e_userId,
-
+        userId:req.body.userId, 
+        p_message:e_password,
+        password:req.body.password
+        
   });
 }
 else{
@@ -79,10 +90,10 @@ router.post("/general/contactus",(req,res)=>{
       e1password="* Password didn't match !";
     }
     else{
-        if(req.body.password<6 || req.body.password>12)
+        if(req.body.password.length<6 || req.body.password.length>12)
           epassword="* Password should be 6-12 charcters long !";
        else if(passwordCheck(req.body.password)==false){
-          epassword="* Password should must have letters and numbers only!";
+          epassword="* Password should have letters and numbers only!";
       }
     }
    
@@ -124,18 +135,12 @@ function passwordCheck(str) {
              lastName:req.body.lastName,
              email:req.body.email,
              phoneno :req.body.phoneno,
-             password:req.body.password
+             password:req.body.password,
+             r_password:req.body.r_password
           });
       }
       else
       {
-         /* res.render('general/contactus',{
-              title:"Contact Us",
-              css:"../css/style.css",
-              message:"Congratulations !"
-          });*/
-
-         
             const {firstName,lastName,email,message}=req.body;
             const sgMail = require('@sendgrid/mail');
             sgMail.setApiKey(process.env.SEND_GRID_API_KEY);
@@ -145,7 +150,14 @@ function passwordCheck(str) {
                 subject: 'Wish tree registration',
                 html: `
                 Hi ${firstName},<br><br>
-                <strong>You are registered successfully</strong>`,
+                <strong>Congratulation!<br>
+                You are registered successfully.</strong>
+                <br>
+                <br>
+                Best,
+                <br>
+                wishTree Registration Team
+                `,
               };
         //Asynchronus operation:we dont know how much time it wii take
         

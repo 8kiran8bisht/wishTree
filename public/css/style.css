@@ -280,7 +280,7 @@ form {
 }
 
 /*Media Queries*/
-@media(max-width:700px){
+@media(max-width:800px){
     .left{
         display:none;
     }
@@ -303,5 +303,20 @@ form {
         grid-template-columns: 1fr;
         min-width: 250px;
     }
+    .container-grid-loginBox {
+        min-width: 250px;
+    }
 }
 
+@media(max-width:1400px){
+    .left{
+        display:none;
+    }
+    .portfolio{
+        display:grid;
+        grid-gap:20px;
+        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    
+    }
+    
+}
