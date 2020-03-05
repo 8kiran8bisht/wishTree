@@ -15,6 +15,7 @@ body{
     background: #ccc;
     margin:10px 10px;
     line-height: 1;
+    
 }
 .btn{
     background-color: var(--dark);
@@ -177,6 +178,7 @@ footer{
 }
 .left{
     grid-column:1;
+    display:block;
 }
 .right{
     grid-column:2;
@@ -280,9 +282,27 @@ form {
 }
 
 /*Media Queries*/
+@media(max-width:600px){
+    .wrapper{
+        overflow-x: hidden;
+
+    }
+  
+    .portfolio{
+        display:grid;
+        grid-gap:20px;
+        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    
+    }
+    
+}
 @media(max-width:800px){
+    .wrapper{
+        overflow-x: hidden;
+
+    }
     .left{
-        display:none;
+        display: none;
     }
     .showcase h1{
         font-size: 2.5rem;
@@ -306,11 +326,24 @@ form {
     .container-grid-loginBox {
         min-width: 250px;
     }
+    .portfolio{
+        display:grid;
+        grid-gap:20px;
+        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    
+    }
 }
 
 @media(max-width:1400px){
+    .wrapper{
+        overflow-x: hidden;
+
+    }
     .left{
-        display:none;
+        display: none;
+    }
+    .container-grid-loginBox {
+        min-width: 250px;
     }
     .portfolio{
         display:grid;
@@ -318,5 +351,7 @@ form {
         grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
     
     }
+    
+    
     
 }
