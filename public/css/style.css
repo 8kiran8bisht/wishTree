@@ -12,9 +12,10 @@ html{
     color:var(--dark);
 }
 body{
-    background: #ccc;
+    background:whitesmoke;
     margin:10px 10px;
     line-height: 1;
+    height:100%;
     
 }
 .btn{
@@ -44,6 +45,7 @@ img{
     display: grid;
     grid-gap:0px;
     padding: 0;
+    min-height: 100%;
 }
 /* Navigation*/
 .main-nav ul{
@@ -51,7 +53,7 @@ img{
     grid-gap: 5px;
     padding:0;
     list-style: none;
-    grid-template-columns: repeat(6,1fr);
+    grid-template-columns: repeat(7,1fr);
 }
 a{
     text-decoration:none;
@@ -84,7 +86,7 @@ a{
 .showcase{
     grid-area: showcase;
     min-height: 450px;
-    background: url(../img/011.jpg);
+    background: url(../img/00.png);
     background-size: cover;
     background-position: center;
     padding: 1rem;
@@ -97,7 +99,7 @@ a{
 .showcase{
     font-size: 4rem;
     margin-bottom: 0;
-    color: rgb(88, 14, 14);
+    color:whitesmoke;
 }
 .homeSection{
     background-color: white;
@@ -105,7 +107,7 @@ a{
     margin: .2em;
 }
 .showcase p{
-       font-size: 1.3rem;
+    font-size: 1.3rem;
     margin-bottom: 0;
     color: var(--light);
 }
@@ -122,6 +124,7 @@ a{
     background: white;
     text-align: center;
     padding: .5rem .5rem;
+    box-shadow: var(--shadow);
 }
 .info{
     background: var(--primary);
@@ -153,14 +156,16 @@ a{
 }
 .navLeft{
     display:grid;
+    
     z-index: -100;
 }
 .portfolio img{
     width:100%;
-    box-shadow: var(--shadow);
+    
 }
 .portfolio1 img{
     width:100%;
+    
    
 }
 /*footer*/
@@ -178,7 +183,6 @@ footer{
 }
 .left{
     grid-column:1;
-    display:block;
 }
 .right{
     grid-column:2;
@@ -194,6 +198,8 @@ footer{
     min-width: 400px;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 100px;
+    overflow: auto;
     
     
 }
@@ -240,8 +246,9 @@ footer{
 }
 .left-main-nav {
    
-    width: 250px;
+    width:80%;
     background-color: var(--dark);
+    left:-5px;
     height: 100%;
 }
 .left-main-nav a {
@@ -249,7 +256,7 @@ footer{
     letter-spacing: 0.2em;
     color: whitesmoke;
     display: block;
-    padding: 20px 10px 20px 10px;
+    padding: 20px 10px 20px 0px;
     border-bottom: 1px dotted gray;
 }
 .left-main-nav a:hover {
@@ -264,8 +271,8 @@ ul li {
 }
 
 form label {
-    font-family: "Merienda", cursive;
-    font-size: 0.8em;
+
+    font-size: 0.15em;
     font-weight: bold;
 }
 input:focus {
@@ -280,6 +287,25 @@ form {
     display: grid;
     align-items: center;
 }
+.box-area{
+    display:flex;
+    flex-wrap:wrap;
+
+    justify-content:center;
+    align-items:center;
+    
+    }
+    .single-box{
+    padding-left:20px;
+    background: white;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:500px;
+    height:auto;
+    box-shadow: grey;
+    }
 
 /*Media Queries*/
 @media(max-width:600px){
@@ -295,6 +321,13 @@ form {
     
     }
     
+    .portfolio1{
+        display:grid;
+        grid-gap:20px;
+        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    
+    }
+    
 }
 @media(max-width:800px){
     .wrapper{
@@ -302,7 +335,7 @@ form {
 
     }
     .left{
-        display: none;
+        display:none;
     }
     .showcase h1{
         font-size: 2.5rem;
@@ -332,6 +365,12 @@ form {
         grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
     
     }
+    .portfolio1{
+        display:grid;
+        grid-gap:20px;
+        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    
+    }
 }
 
 @media(max-width:1400px){
@@ -340,7 +379,7 @@ form {
 
     }
     .left{
-        display: none;
+        grid-column:1;
     }
     .container-grid-loginBox {
         min-width: 250px;
@@ -351,7 +390,12 @@ form {
         grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
     
     }
+    .portfolio1{
+        display:grid;
+        grid-gap:20px;
+        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
     
+    }
     
     
 }

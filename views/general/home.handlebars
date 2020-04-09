@@ -15,7 +15,7 @@
                 <div class="box">
                         <i class=""></i>
                         <h3>{{this.category}}</h3>
-                        <p><img src={{img}} ></p>
+                        <p><img src='../../uploads/{{img}}'height="310px" ></p>
                         
                 </div>
                 </a>
@@ -23,22 +23,22 @@
          </section>
     
 </section> 
-<div class="homeSection">
+<div class="homeSection" style="background-color:#5da36c">
 <h2>On Promotion</h2>
-             <section class="portfolio1">
+             <section class="portfolio1" >
             
             {{#each promotion}}
             
                 <div class="box1">
                         <i class=""></i>
                         
-                        <a href="/product/onPromotion"><img src={{img}} height="210" width="200"><br>See More</a>
-                        
+                        <a href="/product/onPromotion"><img src='../../uploads/{{img}}' height="300" width="200"><br>See More</a>  
                         
                 </div> 
                             {{/each}}
            
          </section>
+         <p></p><p></p>
 </div>
 <div class="homeSection">
 <p><h2>Best Seller Section</h2></p>
@@ -46,7 +46,7 @@
                 {{#each bestSeller}}
             
                 <div class="box1">
-                        <a href="/product/bestSeller"><img src={{img}} >Shop Now</a>
+                        <a href="/product/bestSeller"><img src='../../uploads/{{img}}' height="300" >Shop Now</a>
                         
                 </div>
             {{/each}}   

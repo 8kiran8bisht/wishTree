@@ -7,6 +7,7 @@ const products=
         
         this.productDB.push(
             {
+                name:`bc01`,
                 category:`Baby-Care`,
                 page:`/product/babyCare`,
                 img:`../img/b2.PNG`,
@@ -18,6 +19,7 @@ const products=
             });
             this.productDB.push(
                 {
+                    name:`bc02`,
                     category:`Baby-Care`,
                     page:`/product/babyCare`,
                     img:`../img/b0.jpg`,
@@ -30,6 +32,7 @@ const products=
                 });   
         this.productDB.push(
             {
+                name:`bc03`,
                 category:`Baby-Care`,
                 page:`/product/babyCare`,
                 img:`../img/b3.PNG`,
@@ -41,6 +44,7 @@ const products=
             });
         this.productDB.push(
             {
+                name:`bc04`,
                 category:`Baby-Care`,
                 page:`/product/babyCare`,
                 img:`../img/b4.PNG`,
@@ -52,6 +56,7 @@ const products=
             });
         this.productDB.push(
             {
+                name:`bc05`,
                 category:`Baby-Care`,
                 page:`/product/babyCare`,
                 img:`../img/b5.PNG`,
@@ -63,6 +68,7 @@ const products=
              });
         this.productDB.push(
             {
+                name:`bc06`,
                 category:`Baby-Care`,
                 page:`/product/babyCare`,
                 img:`../img/b6.PNG`,
@@ -74,6 +80,7 @@ const products=
             });
             this.productDB.push(
                 {
+                    name:`bc06`,
                 category:`Baby-Care`,
                 page:`/product/babyCare`,
                 img:`../img/b1.PNG`,
@@ -85,6 +92,7 @@ const products=
                     });
         this.productDB.push(
             {
+            
             category:`Electronics`,
             img:`../img/e2.PNG`,
             price:200,
@@ -395,6 +403,17 @@ const products=
         arrHommePage=[];
         this.productDB.forEach(element=>{
             if(element.onProductList==1)
+            arrHommePage.push(element);
+        }
+
+        )
+        return arrHommePage;
+
+    },
+    getProductById(id){
+        arrHommePage=[];
+        this.productDB.forEach(element=>{
+            if(element.name==id)
             arrHommePage.push(element);
         }
 

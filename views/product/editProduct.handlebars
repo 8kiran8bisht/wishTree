@@ -1,0 +1,47 @@
+<div class="registrationBox">
+    <form method="POST" action="/updateProduct/{{_id}}?method=PUT"enctype="multipart/form-data">
+       <lable></lable>
+       <h1>Edit Product</h1>
+        <label>Title</label>
+        <input type="text" name="title" id="title" value="{{title}}" required>
+        <label></label><label></label>
+
+        <label>Category</label>
+        <select name="category" style="height: 30px;">
+            <option value="Baby-Care" {{if_eq category 'Baby-Care'}}>Baby-Care</option>
+            <option value="Valentine's-Day" {{if_eq category "Valentine's-Day"}}>Valentine's-Day</option>
+            <option value="Electronics" {{if_eq category 'Electronics'}}>Electronics</option>
+            <option value="Bags" {{if_eq category 'Bags'}}>Bags</option>
+        </select>
+        <label></label><label></label>
+
+        <label>Description</label>
+        <textarea id="description" name="description" required>{{description}}</textarea>
+        <label></label><label></label>
+
+        <label>Unit Price(CAD)</label>
+        <input type="text" name="price" id="price" value="{{price}}" required>
+        <label></label><label></label>
+
+        <label>quantity</label>
+        <input type="text" name="quantity" id="quantity"value="{{quantity}}" required>
+        <label></label><label></label>
+        
+        <label>Product On</label>
+        <select name="productOn" style="height: 30px;">
+            <option value="noWhere" {{if_eq productOn 'noWhere'}}>No where</option>
+            <option value="HomePage"  {{if_eq productOn 'HomePage'}}>Home Page</option>
+            <option value="Promotion"  {{if_eq productOn 'Promotion'}}>Promotion</option>
+            <option value="BestSeller"  {{if_eq productOn 'BestSeller'}}>Best Seller</option>    
+        </select>
+        <label></label><label></label>
+
+        <label>Product Image</label>
+        <input type="file" accept="image/*" name="img" id="img" value="{{img}}" required> 
+        <label></label>
+
+        <input type="submit" class="btn1" value="Edit Product">
+        <br><br>
+
+    </form>
+    </div>
