@@ -251,7 +251,6 @@ function passwordCheck(str) {
                     res.redirect("/");
                   })
                   .catch(err=>console.log(`Error to connect the data base${err}`))
-                    /*
                     const sgMail = require('@sendgrid/mail');
                   sgMail.setApiKey(process.env.SEND_GRID_API_KEY);
                   const msg = {
@@ -278,7 +277,7 @@ function passwordCheck(str) {
                   })
                   .catch(err=>{
                       console.log(`Error ${err}`);
-                  });*/
+                  });
                     
       }
 })

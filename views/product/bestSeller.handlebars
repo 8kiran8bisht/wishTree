@@ -1,26 +1,22 @@
 
       <div class="container-grid">
-            {{{nav}}}
-            <div class="right">
-                <h3><a href="/product/products">Products</a> > Best Seller</h3>
-                <section class="portfolio1">
-                            
-                            {{#each products}}
-                            
-                                <div class="box1">
-                                        <i class=""></i>
-                                        <p><h1>{{title}}</h1></p>
-                                        <p><img src='../../uploads/{{img}}' height="220px" width="200"></p>
-                                        <p><h2>CAD ${{price}}</h2></p>
-                                        <p>{{description}}</p>
-                                        <p><a href="/product/productDescription/{{id}}"><input type="button" class="btn1" value="View"></a></p>
-                                        
-                                </div>
-                            {{/each}}
-                        </section>
-            </div>
-            </div>
+        {{{nav}}}
+        <div class="right">
+            <h2 style="text-align: left;"><a href="/product/products">Products</a> > Best Seller</h2>
+            <section class="portfolio1">
+            {{#each products}}
+                <div class="box1">
+                    <p><h1 >{{title}}</h1></p>
+                    <p><img src='../../uploads/{{img}}' height="220px" width="200"></p>
+                    <p><h2>CAD ${{price}}</h2></p>
+                    <p>{{description}}</p>
+                     <p><a href="/product/productDescription/{{id}}"><input type="button" class="btn1" value="View"></a></p>
+                </div>
+            {{/each}}
+            </section>
         </div>
+     </div>
+
                 
                 
                  

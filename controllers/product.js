@@ -6,32 +6,31 @@ const path=require("path");
 const isAuthenticated=require("../middleware/auth");
 
 const nav=`<div class="left">
-<section class="navLeft">
-       <nav class="left-main-nav">
-       <ul class="left-main-nav-ul">
-           <li>
-               <div><a href="/product/electronics" style="text-decoration: none;">Electronics</a></div>
-           </li>
-           <li>
-               <div><a href="/product/babyCare" style="text-decoration: none;">Baby Care</a></div>
-           </li>
-           <li>
-               <div><a href="/product/bags" style="text-decoration: none;">Bags</a></div>
-           </li>
-           <li>
-               <div><a href="/product/valentine" style="text-decoration: none;">Valentine's Day</a></div>
-           </li>
-           <li>
-               <div><a href="/product/bestSeller" style="text-decoration: none;">Best Seller</a></div>
-           </li>
-           <li>
-               <div><a href="/product/onPromotion" style="text-decoration: none;">On Promotion</a></div>
-           </li>
-          
-       </ul>
-   </nav>
-   </section>
-   </div>`;
+                <section class="navLeft">
+                <nav class="left-main-nav">
+                    <ul class="left-main-nav-ul">
+                        <li>
+                            <div><a href="/product/electronics" style="text-decoration: none;">Electronics</a></div>
+                        </li>
+                        <li>
+                            <div><a href="/product/babyCare" style="text-decoration: none;">Baby Care</a></div>
+                        </li>
+                        <li>
+                            <div><a href="/product/bags" style="text-decoration: none;">Bags</a></div>
+                        </li>
+                        <li>
+                            <div><a href="/product/valentine" style="text-decoration: none;">Valentine's Day</a></div>
+                        </li>
+                        <li>
+                            <div><a href="/product/bestSeller" style="text-decoration: none;">Best Seller</a></div>
+                        </li>
+                        <li>
+                            <div><a href="/product/onPromotion" style="text-decoration: none;">On Promotion</a></div>
+                        </li>
+                     </ul>
+                </nav>
+                </section>
+             </div>`;
   
   /*------------------------Products on home page---------------------------------*/
 router.get("/product/products",(req,res)=>{
@@ -314,37 +313,40 @@ router.post("/product/shoppingCart",isAuthenticated,(req,res)=>{
     orderModel.find({"status":1})
     .then((orders)=>{
         let balance=0;
-        let str="<table border='1' style='text-align: center;'><tr><td><strong>S.No</strong></td><td><strong>Title</strong></td><td><strong>Unit Price</strong></td><td><strong>Quantity</strong></td><td><strong>Total</strong></td></tr>";
+        let str="<html><head> <style>.table{width: 60%;border-collapse: collapse;font-family: sans-serif;}.table td,.table th{padding: 10px;background-color: honeydew;border: 1px solid #ddd;text-align: center;}.table th{ background-color:rgb(85, 116, 85); color: white; }</style></head><body> <table class='table'><thead><th>S.No</th><th>Product</th><th>Unit Price</th> <th>Quantity</th><th>Total</th></thead><tbody>";
         for(let i=0;i<orders.length;i++){
             balance=balance+(orders[i].price*orders[i].quantity);
-            str+=`<tr><td>${i+1}</td><td>${orders[i].title}</td><td>${orders[i].price}</td><td>${orders[i].quantity}</td><td>${orders[i].price*orders[i].quantity}</td></tr></strong>`
+            str+=`<tr><td style="text-align: center;">${i+1}</td><td>${orders[i].title}</td><td style="text-align: right;">CAD$ ${orders[i].price}</td><td style="text-align: right;">${orders[i].quantity}</td><td style="text-align: right;">CAD$ ${orders[i].price*orders[i].quantity}</td></tr></strong>`
         }
-        str+=`<tr><td colspan="4"><strong>Total Amount<strong></td><td>${balance}</td></tr>
-        </table>`;
-         /*const sgMail = require('@sendgrid/mail');
+        str+=`<tr><td colspan="4" style="text-align: right;"><strong style="color:red">Total Amount</strong></td><td><strong style="color:red; text-align: right">CAD$ ${balance}</strong></td></tr>
+        </tbody></table>`;
+        const sgMail = require('@sendgrid/mail');
             sgMail.setApiKey(process.env.SEND_GRID_API_KEY);
             const msg = {
-                to:`8kiran8bisht@gmail.com`,
+                to:`${req.session.login.email}`,
                 from: `order@wishtree.com`,
                 subject: 'Order Confirmation From Wish Tree',
-                html: `${str}`
+                html: `Hi ${req.session.login.firstName}<br><br> Your order has been shipped. Order description is as following:<br><br>
+                ${str}<br><br><br>
+                Best,
+                <br>
+                wishTree Registration Team`,
               };
-        //Asynchronus operation:we dont know how much time it wii take
+        //Asynchronus operation:we dont know how much time it will take
         
-        sgMail.send(msg)
-        //checking 
+        sgMail.send(msg) 
             .then(()=>{
-              res.redirect("/");
-            })
+              //{"created": false}, {"$set":{"created": true}}
+                    orderModel.updateMany({"status":1},{"$set":{"status":0}})
+                    .then(()=>{
+                        res.redirect('/');
+                    })
+                    .catch(err=>console.log("Unable to place the order "));
+               })
             .catch(err=>{
                 console.log(`Error ${err}`);
-            });*/
-            //{"created": false}, {"$set":{"created": true}}
-            orderModel.updateMany({"status":1},{"$set":{"status":0}})
-            .then(()=>{
-                res.redirect('/');
-            })
-            .catch(err=>console.log("Unable to place the order "));
+            });
+            
     })
     .catch(err=>`Error: error in fatching data from data base ${err}`);
     

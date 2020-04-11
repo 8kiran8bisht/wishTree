@@ -13,7 +13,7 @@ html{
 }
 body{
     background:whitesmoke;
-    margin:10px 10px;
+    margin:1rem;
     line-height: 1;
     height:100%;
     
@@ -42,18 +42,21 @@ img{
     max-width: 100%;
 }
 .wrapper{
+    margin:0;
     display: grid;
-    grid-gap:0px;
+    grid-gap:0;
     padding: 0;
     min-height: 100%;
+    text-align: center;
 }
 /* Navigation*/
 .main-nav ul{
+    margin: 1rem;
     display:grid;
-    grid-gap: 5px;
+    grid-gap: .5rem;
     padding:0;
     list-style: none;
-    grid-template-columns: repeat(7,1fr);
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); 
 }
 a{
     text-decoration:none;
@@ -85,11 +88,10 @@ a{
 /* Showcase*/
 .showcase{
     grid-area: showcase;
-    min-height: 450px;
+    min-height:29rem;
     background: url(../img/00.png);
     background-size: cover;
     background-position: center;
-    padding: 1rem;
     display:flex;
     flex-direction: column;
     align-items: start;
@@ -102,7 +104,7 @@ a{
     color:whitesmoke;
 }
 .homeSection{
-    background-color: white;
+    background-color:#29648A;
     padding:.3em 1em ;
     margin: .2em;
 }
@@ -115,15 +117,16 @@ a{
 /*boxes*/
 
 .box{
-    background: whitesmoke;
+    background:#252748;
     text-align: center;
-    padding: .5rem .5rem;
+    padding: .5rem 1.5rem;
     box-shadow: var(--shadow);
 }
+
 .box1{
     background: white;
     text-align: center;
-    padding: .5rem .5rem;
+    padding: .5rem 1.5rem;
     box-shadow: var(--shadow);
 }
 .info{
@@ -145,18 +148,23 @@ a{
     display:grid;
     grid-gap:15px;
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    font-size:x-small;
+    font-size:small;
 
+}
+.portfolio1 h1{
+    color:green;
 }
 .portfolio{
     display:grid;
     grid-gap:20px;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    width:100%;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
 
 }
+
 .navLeft{
     display:grid;
-    
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
     z-index: -100;
 }
 .portfolio img{
@@ -169,33 +177,47 @@ a{
    
 }
 /*footer*/
-footer{
-    margin-top: 2rem;
+.before-footer{
+    margin-top: 10px;
+    padding:1rem 3rem ;
+    display:grid;
+    grid-gap: 20px;
+    color:white;
     background: var(--dark);
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));  
+
+}
+footer{
+    margin-top:0;
+    background: black;
     color:var(--light);
     text-align: center;
     padding: .2rem;
 }
 .container-grid{
+    margin: 0;
     display:grid;
-    grid-template-columns: 20% 80%;
-    grid-gap:5px;
+    grid-template-columns:1fr 4fr;
+
 }
 .left{
     grid-column:1;
 }
 .right{
     grid-column:2;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    grid-gap: 15px;
    
 
 }
 .container-grid-loginBox{
+    text-align: left;
     padding: .5rem;
     border: thick;
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
     grid-gap:5px;
-    min-width: 400px;
+    min-width: 200px;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 100px;
@@ -203,52 +225,28 @@ footer{
     
     
 }
-.registrationBox{
-  
-    padding: 1rem;
-    border: thick;
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-    grid-gap:5px;
+input[type="text"] {
+    width: 400px;
+}
 
-}
-.registrationBox form {
-    margin-top: 0;
-    padding: .5em;
-    border: 1px solid;
-    background-color:var(--primary);
-    border-radius: 1%;
-    min-width: 450px;
-    margin-left: auto;
-    margin-right: auto;
 
-    display: grid;
-    grid-template-columns: 0.25fr .65fr;
-
-    align-items: center;
-    grid-gap: 2px;
-}
-.registrationBox label{
-    
-        font-size: 0.8em;
-        font-weight:bold;
-       
-}
-.registrationBox input{
-    height: 30px;
-}
 .container-grid-loginBox label{
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight:bold;
+    padding-bottom: .5em;
 }
 .container-grid-loginBox input{
     height: 30px;
+    font-size: small;
+}
+textarea {
+    height: 100px;
 }
 .left-main-nav {
    
-    width:80%;
+    width:90%;
     background-color: var(--dark);
-    left:-5px;
+    text-align: left;
     height: 100%;
 }
 .left-main-nav a {
@@ -256,7 +254,7 @@ footer{
     letter-spacing: 0.2em;
     color: whitesmoke;
     display: block;
-    padding: 20px 10px 20px 0px;
+    padding: 10px 0px 20px 0px;
     border-bottom: 1px dotted gray;
 }
 .left-main-nav a:hover {
@@ -268,10 +266,10 @@ a:hover{
 }
 ul li {
     list-style-type: none;
+    grid-template-columns: 1fr;
 }
 
 form label {
-
     font-size: 0.15em;
     font-weight: bold;
 }
@@ -290,11 +288,9 @@ form {
 .box-area{
     display:flex;
     flex-wrap:wrap;
-
     justify-content:center;
     align-items:center;
-    
-    }
+}
     .single-box{
     padding-left:20px;
     background: white;
@@ -304,98 +300,20 @@ form {
     align-items:center;
     width:500px;
     height:auto;
-    box-shadow: grey;
+    box-shadow:var(--dark);
     }
 
-/*Media Queries*/
-@media(max-width:600px){
-    .wrapper{
-        overflow-x: hidden;
+    @media(max-width:600px){
+        .left{
+            display:none;
+        }
+        .container-grid{
+            grid-template-columns: 1fr;
+        }
+    }
+    @media(max-width:450px){
+        input[type="text"] {
+            width: 250px;
+        }
 
     }
-  
-    .portfolio{
-        display:grid;
-        grid-gap:20px;
-        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-    
-    }
-    
-    .portfolio1{
-        display:grid;
-        grid-gap:20px;
-        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-    
-    }
-    
-}
-@media(max-width:800px){
-    .wrapper{
-        overflow-x: hidden;
-
-    }
-    .left{
-        display:none;
-    }
-    .showcase h1{
-        font-size: 2.5rem;
-
-    }
-    .main-nav ul{
-        grid-template-columns: 1fr;
-    }
-    .container-grid{
-        grid-template-columns: 1fr;
-    }
-    .info -btn{
-        display:block;
-        text-align: center;
-        margin:auto;
-    }
-    .registrationBox form{
-        grid-template-columns: 1fr;
-        min-width: 250px;
-    }
-    .container-grid-loginBox {
-        min-width: 250px;
-    }
-    .portfolio{
-        display:grid;
-        grid-gap:20px;
-        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    
-    }
-    .portfolio1{
-        display:grid;
-        grid-gap:20px;
-        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    
-    }
-}
-
-@media(max-width:1400px){
-    .wrapper{
-        overflow-x: hidden;
-
-    }
-    .left{
-        grid-column:1;
-    }
-    .container-grid-loginBox {
-        min-width: 250px;
-    }
-    .portfolio{
-        display:grid;
-        grid-gap:20px;
-        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    
-    }
-    .portfolio1{
-        display:grid;
-        grid-gap:20px;
-        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    
-    }
-    
-    
-}

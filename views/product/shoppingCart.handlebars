@@ -7,20 +7,20 @@
     {{#each data}}
     <div class="inner-box">
     
-    <div class="single-box1" >
-       <p><img src="../../uploads/{{this.img}}" width="100px"> </p>
-    </div>
-    <div class="single-box2">
-        <h2 style="color: darkgreen;">{{this.title}}</h2>
-       <p style="color:crimson">Price : CAD${{this.price}}</p>
-       <p><strong>Quantity Orderd : </strong>{{this.quantity}}</p>
-       <p><strong>Description : </strong>{{this.description}}</p>
-    </div>
-    <div class="single-box3">
-        <h3 style="color: darkgreen;">Order Summery</h3>
-        <p>items({{this.quantity}}) </p>
-        <p>Total : CAD$ {{this.total}}</p>
-    </div>
+        <div class="single-box1" >
+        <p><img src="../../uploads/{{this.img}}" width="100px"> </p>
+        </div>
+        <div class="single-box2">
+            <h2 style="color: darkgreen;">{{this.title}}</h2>
+        <p style="color:crimson">Price : CAD${{this.price}}</p>
+        <p><strong>Quantity Orderd : </strong>{{this.quantity}}</p>
+        <p><strong>Description : </strong>{{this.description}}</p>
+        </div>
+        <div class="single-box3">
+            <h3 style="color: darkgreen;">Order Summery</h3>
+            <p>items({{this.quantity}}) </p>
+            <p>Total : CAD$ {{this.total}}</p>
+        </div>
     </div>
      {{/each}}
      {{#if status}}
@@ -28,7 +28,7 @@
      <div class="single-box1"><a href="/product/products"><input type="button" class="btn1" value ="Add Products"></a></div>
      <div class="single-box2"><input type="submit" class="btn1" value ="Place your Order"></div>
      <div class="single-box3">
-    <h3 style="color:crimson" >Total : CAD$ {{balance}}</h3></div>
+        <h3 style="color:crimson" >Total : CAD$ {{balance}}</h3></div>
      </div>
     
 

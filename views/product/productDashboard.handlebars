@@ -1,77 +1,42 @@
+<a href="/addProducts" ><input type="button" class="btn1" value="Add Product" style="float: right;"> </a>
+  
 <h1>Products Dashboard</h1>
- 
- <section class="">
-   
-
      <form method="POST" action="/product/search" >
         <label><strong>Search By</strong></label>
-        <select name="product-search" id="product-search" style="height: 30px;">
-                <option value="all"  {{if_eq search 'all'}}>All Products</option>
-                <option value="Baby-Care"  {{if_eq search 'Baby-Care'}}>Baby-Care</option>
-                <option value="Valentine's-Day"  {{if_eq search "Valentine's-Day"}}>Valentine's-Day</option>
-                <option value="Electronics" {{if_eq search 'Electronics'}}>Electronics</option>
-                <option value="Bags"  {{if_eq search 'Bags'}}>Bags</option>
-        </select>
-        <input type="submit" value="Search" class="btn1">
-         <a href="/addProducts" ><input type="button" class="btn1" value="Add Product" style="float: right;"> </a>
-     </form> <br><br>
+            <select name="product-search" id="product-search" style="height: 30px;">
+                    <option value="all"  {{if_eq search 'all'}}>All Products</option>
+                    <option value="Baby-Care"  {{if_eq search 'Baby-Care'}}>Baby-Care</option>
+                    <option value="Valentine's-Day"  {{if_eq search "Valentine's-Day"}}>Valentine's-Day</option>
+                    <option value="Electronics" {{if_eq search 'Electronics'}}>Electronics</option>
+                    <option value="Bags"  {{if_eq search 'Bags'}}>Bags</option>
+            </select>
+            <input type="submit" value="Search" class="btn1">
+    </form>
+     <br><br>
 
-    <table class="table">
-        <thead>
-                <th>Img</th>
-                <th>Category</th>            
-                <th>Title</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>productOn</th>
-                <th>Description</th>
-                <th>Operations</th>
-                
-        </thead>
-        <tbody>
-            {{#each data}}
-                <tr>
-                    <td data-table="Img">
-                       <span><img src="./../uploads/{{this.img}}" width="80px"></span>
-                      
-                   </td>
-                   
-                   <td data-table="Category">
-                       <span>{{this.category}}</span>
-                      
-                   </td>
-                   <td data-table="Title">
-                        <span>{{this.title}}</span>
-                   </td>
-                   
-                   <td data-table="Price">
-                        <span>{{this.price}}</span>
-                   </td>
-                   <td data-table="Quantity">
-                        <span>{{this.quantity}}</span>
-                   </td>
-                   <td data-table="productOn">
-                       <span>{{this.productOn}}</span>
-                   </td>
-                   <td data-table="Description">
-                       <span>{{this.description}}</span>
-                   </td>
-                   <td data-table="Operations">
-                      <strong><a href="/editProduct/{{this.id}}" style="color: darkgreen;">Edit</a>
-                        <a href="/deleteProduct/{{this.id}}?method=DELETE" style="color:darkred">Delete</a></strong>  
-                   </td> 
-                </tr>
-
-                {{else}}
-                    <td colspan="6" >
-                        <p>No products in the database</p>
-                    </td>
-
-                {{/each}}
-    </tbody>
-    </table>
- 
-</section>
+    {{#each data}}
+    <div class="inner-box">
+    
+        <div class="single-box1" >
+            <p><img src="../../uploads/{{this.img}}" width="100px"> </p>
+        </div>
+        <div class="single-box2">
+            <p ><strong style="color: darkgreen;">Title : </strong>{{this.title}}</p>
+            <p ><strong style="color: darkgreen;">Category: </strong>{{this.category}}</p>
+            <p ><strong style="color: darkgreen;">Description: </strong>{{this.description}}</p>  
+        </div>
+       <div class="single-box3">
+           <p ><strong style="color: darkgreen;">Price : </strong>CAD$ {{this.price}}</p>
+           <p ><strong style="color: darkgreen;">Quantity  : </strong>{{this.quantity}}</p>
+           <p ><strong style="color: darkgreen;">Product On :</strong> {{this.productOn}}</p>  
+        </div>
+       <div class="single-box4">
+            <a href="/editProduct/{{this.id}}" style="color: darkgreen;"><input type="button" class="btn1" value="Edit"></a>
+            <a href="/deleteProduct/{{this.id}}?method=DELETE" style="color:darkred"><input type="button" class="btn1" value="Delete"></a></strong> 
+       </div>
+    </div>
+  {{/each}}
+  
 
 <div id="">
     <a href="/addProducts" ><input type="button" class="btn1" value="Add Product"> </a>

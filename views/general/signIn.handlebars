@@ -2,18 +2,18 @@
 <div class="container-grid-loginBox">
     <div class="right">
         <form action="/general/signIn" method="POST">
-            <lable><h2>Sign-In</h2></lable>
+            <lable><h2 style="text-align: center;">Sign-In</h2></lable>
            <div class="error">{{errs}}</div>
             <br>
-                <lable id="userId">E-mail address or mobile phone number</lable>
+                <lable id="userId"><strong>address or mobile phone number</strong> </lable>
                 <br>
                 
-                <input type="userId" id="userId" name="userId" autofocus="on" tabindex="0" value="{{userId}}"  maxlength="100" size="45">
+                <input type="userId" id="userId" name="userId" autofocus="on" tabindex="0" value="{{userId}}"  maxlength="100" >
             <br>
               <br>
-                <lable id="password">Enter your Password</lable>
+                <lable id="password"><strong>your Password</strong> </lable>
                 <br>
-                <input type="password" id="password" name="password" autofocus="on" tabindex="0" value="{{password}}" maxlength="100" size="45">
+                <input type="password" id="password" name="password" autofocus="on" tabindex="0" value="{{password}}" >
             <br>
             <br>
                 <input class="btn1" type="submit" value="Continue">

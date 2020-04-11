@@ -1,55 +1,38 @@
           
 <section>
-                
-                    <header class="showcase">
-                      <h3>Shopping is fun ....</h3>
-                    </header>
-            
+    <header class="showcase">
+        <h3>Shopping is fun ....</h3>
+    </header>           
 </section>
 <section>
-    <p style="background-color: whitesmoke;"><h2>Product Category</h2></p>
-        <section class="portfolio">
-            
-            {{#each products}}
-            <a href="{{page}}">
-                <div class="box">
-                        <i class=""></i>
-                        <h3>{{this.category}}</h3>
-                        <p><img src='../../uploads/{{img}}'height="310px" ></p>
-                        
-                </div>
-                </a>
-            {{/each}}
-         </section>
-    
-</section> 
-<div class="homeSection" style="background-color:#5da36c">
-<h2>On Promotion</h2>
-             <section class="portfolio1" >
-            
+    <p style="background-color: whitesmoke; "><h1 style="text-align: left;">Product Category</h1></p>
+    <section class="portfolio">
+        {{#each products}}
+        <a href="{{page}}">
+            <div class="box">
+                <h2 style="color:white;">{{this.category}}</h2>
+                <p><img src='../../uploads/{{img}}' height="300px"></p>
+            </div>
+        </a>
+        {{/each}}
+    </section>
+<div class="homeSection" style="background-color:#AAABB8">
+   <h2  style="text-align: left;">On Promotion</h2>
+        <section class="portfolio1" >
             {{#each promotion}}
-            
                 <div class="box1">
-                        <i class=""></i>
-                        
-                        <a href="/product/onPromotion"><img src='../../uploads/{{img}}' height="300" width="200"><br>See More</a>  
-                        
+                    <a href="/product/onPromotion"><img src='../../uploads/{{img}}'><br>See More</a>          
                 </div> 
-                            {{/each}}
-           
+            {{/each}}  
          </section>
-         <p></p><p></p>
+        <p></p><p></p>
 </div>
 <div class="homeSection">
-<p><h2>Best Seller Section</h2></p>
-            <section class="portfolio1">
-                {{#each bestSeller}}
-            
-                <div class="box1">
-                        <a href="/product/bestSeller"><img src='../../uploads/{{img}}' height="300" >Shop Now</a>
-                        
-                </div>
-            {{/each}}   
-            </section>
+    <p><h2  style="text-align: left; color:white">Best Seller Section</h2></p>
+    <section class="portfolio1">
+        {{#each bestSeller}}
+            <div class="box1"><a href="/product/bestSeller"><img src='../../uploads/{{img}}'>Shop Now</a></div>
+        {{/each}}   
+    </section>
 </div>
   

@@ -1,18 +1,17 @@
 
     <div class="container-grid">
             {{{nav}}}
-            
             <div class="right">
-                <section class="portfolio">
-                            {{#each products}}
-                            <a href="{{page}}">
-                                <div class="box">
-                                        <i class=""></i>
-                                        <p>{{category}}</p>
-                                        <p><img src='../../uploads/{{img}}' height="250px"></p>       
-                                </div>
-                            </a>
-                            {{/each}}
+                <section class="portfolio" >
+                    {{#each products}}
+                    <a href="{{page}}">
+                        <div class="box1">
+                            <h2>{{category}}</h2>
+                            <p><img src='../../uploads/{{img}}'  height="300px"></p>  
+                             <h3 style="color: green;">{{title}}</h3>     
+                        </div>
+                    </a>
+                    {{/each}}
                 </section>
             </div>
             

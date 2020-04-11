@@ -1,58 +1,45 @@
-
-<div class="registrationBox">
+<br><br>  
+<div class="container-grid-loginBox" >
+    <div class="right">
+        <form action="/general/contactus" method="POST">
+         <lable><h2 style="text-align: center;">Sign-Up</h2></lable>
+           <div class="error">{{errs}}</div>
+                <br>
+                     <lable id="name"><strong>First Name</strong></lable>
+                     <div class="error">{{e_firstName}}</div>
+                     <input type="name" id="firstName" name="firstName" tabindex=0 autofocus="on" value="{{firstName}}">
+                 <br>
+                    <lable id="lastName"><strong>Last Name</strong></lable>
+                    <div class="error">{{e_lastName}}</div>
+                    <input type="text" id="lastName" name="lastName" tabindex=0 autofocus="on" value="{{lastName}}">
+                 <br>
+                    <lable id="email"><strong>Email</strong></lable>
+                    <div class="error">{{e_email}}</div>
+                    <input type="text" id="email" name="email" tabindex=0 placeholder="e.g. abc@xyz.com" autofocus="on" value="{{email}}">
+                 <br>
+                    <lable id="password"><strong>Password</strong></lable>
+                    <div class="error">{{e_password}}</div>
+                    <input type="password" id="password" name="password" tabindex=0 autofocus="on" value="{{password}}">
+                 <br>
+                     <lable id="password"><strong>Re Enter Password</strong></lable>
+                     <div class="error">{{e1_password}}</div>
+                     <input type="password" id="r_password" name="r_password" tabindex=0 autofocus="on" value="{{r_password}}" >
+                 <br>
+                    <lable id="phoneno"><strong>Phone no</strong></lable>
+                    <div class="error">{{e_phoneno}}</div>
+                   <input type="text" id="phoneno" name="phoneno" tabindex=0 autofocus="on" value="{{phoneno}}">
+                 <br>
+                     <input type="submit" class="btn1" tabindex=0 value="Create your WishTree account">
+                <br>
+                 
+            <br>
+        
+      <a href="/general/signIn" >Already have an account ?</a>
+        </form>
     
-<form action="/general/contactus" method="POST">
- 
-    
-    <lable></lable>
-    <h1>Create an account</h1>
-    <br>
-    <div class="error">{{errs}}</div>
-    
-        <lable ></lable>
-        <lable></lable>
-    <br>
-    <div class="error">{{e_firstName}}</div>
-    
-        <lable id="firstName"><strong>Name</strong> </lable>
-        <input type="name" id="firstName" name="firstName" tabindex=0 autofocus="on" value="{{firstName}}">
-    <br>
-    <div class="error">{{e_lastName}}</div>
-    
-        <lable id="lastName"><strong>Last Name</strong></lable>
-        <input type="text" id="lastName" name="lastName" tabindex=0 autofocus="on" value="{{lastName}}">
-    <br>
-    <div class="error">{{e_email}}</div>
-    
-        <lable id="email"><strong>Email</strong></lable>
-        <input type="text" id="email" name="email" tabindex=0 placeholder="e.g. abc@xyz.com" autofocus="on" value="{{email}}">
-    <br>
-    <div class="error">{{e_password}}</div>
-    
-        <lable id="password"><strong>Password</strong></lable>
-        <input type="password" id="password" name="password" tabindex=0 autofocus="on" value="{{password}}">
-    <br>
-    <div class="error">{{e1_password}}</div>
-    
-        <lable id="password"><strong>Re Enter Password</strong></lable>
-        <input type="password" id="r_password" name="r_password" tabindex=0 autofocus="on" value="{{r_password}}" >
-    <br>
-    
-    <div class="error">{{e_phoneno}}</div>
-   
-        <lable id="phoneno"><strong>Phone no</strong></lable>
-        <input type="text" id="phoneno" name="phoneno" tabindex=0 autofocus="on" value="{{phoneno}}">
-    <br>
-    <lable></lable>
-    <br>
-         <input type="submit" class="btn1" tabindex=0 value="Create your WishTree account">
-    <br>
-    <lable></lable>
-    <br>
-        <p>Already have an account ? <a href="/general/signIn" >Sign in</a></p>
-    <br>
-    <br>
    
 
-</form>
+        </form>
+    </div>
 </div>
+<br><br>
