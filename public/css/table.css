@@ -33,7 +33,7 @@ body{
     justify-content:center;
     align-items:center; 
     
-    padding:0px;
+    padding:10px;
     border-bottom: gray solid;
     }
     .single-box1{
@@ -121,12 +121,11 @@ footer{
     text-align: center;
     padding: .2rem;
 }
-@media(max-width:500px){
+@media only screen and (max-width:640px){
     .box-area{
        
         display:flex;
         flex-direction: column;
-        width:365px;
         font-size: small;
         justify-content:center;
         align-items:center;
@@ -135,11 +134,9 @@ footer{
         .inner-box{
         display:flex;
         flex-direction: column;
-        width:300px;
         justify-content:center;
         align-items:center; 
         padding:0px;
         border-bottom: gray solid;
         }
-   
 }

@@ -116,7 +116,7 @@ a{
 /*boxes*/
 
 .box{
-    background:#494c78;
+    background:#313454;
     text-align: center;
     padding: .5rem 1.5rem;
     box-shadow: var(--shadow);
@@ -143,8 +143,6 @@ a{
     grid-template-rows: repeat(auto-fit,minmax(200px,1fr));
 }
 
-
-
 .portfolio11{
     display:grid;
     grid-gap:15px;
@@ -152,7 +150,7 @@ a{
     font-size:small;
 
 }
-.portfolio1 h1{
+.portfolio1 h3{
     color:green;
 }
 .portfolio{

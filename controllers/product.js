@@ -265,8 +265,7 @@ productsModel.findById(req.params.id)
         title:req.body.title,
         description:req.body.description,
         price:req.body.price,
-        quantity:req.body.quantity,
-        userid:req.session.login._id
+        quantity:req.body.quantity
     }
 
     const order= new orderModel(newOrder);
@@ -278,7 +277,7 @@ productsModel.findById(req.params.id)
 });
 //-----------------------------------------------------------------------
 router.get('/shoppingCart',isAuthenticated,(req,res)=>{
-    orderModel.find({"status":1,'userid':req.session.login._id})
+    orderModel.find({"status":1})
     .then((orders)=>{
         let balance=0;
         let status=false;
@@ -299,12 +298,19 @@ router.get('/shoppingCart',isAuthenticated,(req,res)=>{
         })
         if(balance>0)
         status=true;
-        res.render('product/shoppingCart',{
-            data:filteredOrder,
-            balance:balance,
-            status:status,
-            css:"../css/table.css"
-        });
+        orderModel.updateOne({"status":1},{"$set":{'userid':req.session.login._id}})
+        .then(()=>{
+            res.render('product/shoppingCart',{
+                data:filteredOrder,
+                balance:balance,
+                status:status,
+                css:"../css/table.css"
+            });
+        })
+        .catch(err=>console.log(`Error : Cant update ${err}`))
+
+        
+        
     })
     .catch(err=>`Error: error in fatching data from data base ${err}`);
     
@@ -333,6 +339,7 @@ router.post("/product/shoppingCart",isAuthenticated,(req,res)=>{
                 <br>
                 wishTree Registration Team`,
               };
+        //Asynchronus operation:we dont know how much time it will take
         
         sgMail.send(msg) 
             .then(()=>{
@@ -346,7 +353,7 @@ router.post("/product/shoppingCart",isAuthenticated,(req,res)=>{
             .catch(err=>{
                 console.log(`Error ${err}`);
             });
-            
+           
     })
     .catch(err=>`Error: error in fatching data from data base ${err}`);
     
