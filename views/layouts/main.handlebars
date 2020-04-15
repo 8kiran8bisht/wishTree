@@ -11,30 +11,34 @@
     <div class="wrapper">
       <nav class="main-nav" style="background-color:black">
         <ul>
-            <li><img src="../img/logo_.png" width="150" style="height:auto; position: relative;"> </li>
+            <li><img src="../img/logo_.png" width="150" style="height:30px; position: relative;"> </li>
             <li><a href="/">Home</a></li>
             <li><a href="/product/products">Products</a></li>
              {{#if currentSession}}
             <li><a href="/general/logOut">logOut</a></li>
-            <li><a href="/shoppingCart">Shopping Cart</a></li>
+             {{#if_clerk currentSession.type}}
+             
+            {{/if_clerk}}
+            
              {{else}}
             <li><a href="/general/contactus">Sign Up</a></li>
             <li><a href="/general/signin">Sign in</a></li>
             {{/if}}
+           
              <li>
                  <form method="POST" action="/product/basicSearch" style="display: block; position: relative;padding:0;border-radius: 4px 4px 4px 4px; background:#ffc107" >
-                    <select name="product-search" id="product-search" style="height: 42px;width:75%; border:none;outline:none;">
+                    <select name="product-search" id="product-search" style="height: 30px;width:75%; border:none;outline:none;">
                         <option value="/product/products" {{if_eq page "/product/products"}}>All Products</option>
                         <option value="/product/babyCare"  {{if_eq page "/product/babyCare"}}>Baby-Care</option>
                         <option value="/product/valentine"  {{if_eq page "/product/valentine"}}>Valentine's-Day</option>
                         <option value="/product/electronics"  {{if_eq page "/product/electronics"}}>Electronics</option>
                         <option value="/product/bags"  {{if_eq page "/product/bags"}}>Bags</option>
                     </select>
-                    <input type="submit" value="Search" style="left:-5px;position:relative;height: 42px; width:20%;border:none;outline:none;cursor:pointer;background:#ffc107">
+                    <input type="submit" value="Search" style="left:-5px;position:relative;height: 30px; width:20%;border:none;outline:none;cursor:pointer;background:#ffc107">
                   </form>
               </li>
               {{#if currentSession}}
-              <li><h2 style="color:coral;"> Hi {{currentSession.firstName}} {{currentSession.lastName}} !</h2></li>
+              <li><strong style="color:coral;"> Hi {{currentSession.firstName}} {{currentSession.lastName}} !</strong></li>
               {{/if}}
         </ul>
       </nav>
@@ -52,6 +56,8 @@
         Investor Relations
         <br><br>
         Press Releases
+        <br><br>
+        Independently Publish with Us 
       </p>
       <p>
         Make Money with Us
@@ -65,8 +71,7 @@ AmazWishTreeon Associates
 Sell on WishTree Handmade
 <br><br>
 Advertise Your Products
-<br><br>
-Independently Publish with Us
+
       </p>
       <p>
         Let Us Help You

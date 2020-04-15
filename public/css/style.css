@@ -61,17 +61,16 @@ img{
 a{
     text-decoration:none;
     color:black;
-    font-weight: 600;
+    font-weight: 550;
 }
 .main-nav a{
     background: var(--dark);
     display:block;
     text-decoration:none;
-    padding:0.8rem;
+    padding:0.5rem;
     text-align: center;
     color:var(--primary);
-    text-transform: uppercase;
-    font-size: 1.1rem;
+    font-size: 1rem;
     box-shadow: var(--shadow);
 }
 .main-nav a:hover{
@@ -105,7 +104,7 @@ a{
 }
 .homeSection{
     background-color:#29648A;
-    padding:.3em 1em ;
+    padding:1em 1em ;
     margin: .2em;
 }
 .showcase p{
@@ -117,7 +116,7 @@ a{
 /*boxes*/
 
 .box{
-    background:#252748;
+    background:#494c78;
     text-align: center;
     padding: .5rem 1.5rem;
     box-shadow: var(--shadow);
@@ -144,10 +143,12 @@ a{
     grid-template-rows: repeat(auto-fit,minmax(200px,1fr));
 }
 
-.portfolio1{
+
+
+.portfolio11{
     display:grid;
     grid-gap:15px;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns: repeat(5,minmax(200px,1fr));
     font-size:small;
 
 }
@@ -158,7 +159,7 @@ a{
     display:grid;
     grid-gap:20px;
     width:100%;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    grid-template-columns: repeat(4,minmax(200px,1fr));
 
 }
 
@@ -171,6 +172,14 @@ a{
     width:100%;
     
 }
+
+.portfolio1{
+    display:grid;
+    grid-gap:15px;
+    grid-template-columns: repeat(4,minmax(200px,1fr));
+    font-size:small;
+
+}
 .portfolio1 img{
     width:100%;
     
@@ -178,13 +187,15 @@ a{
 }
 /*footer*/
 .before-footer{
-    margin-top: 10px;
+    margin-top: 5px;
+    text-align: center;
     padding:1rem 3rem ;
     display:grid;
     grid-gap: 20px;
     color:white;
     background: var(--dark);
     grid-template-columns: repeat(auto-fit,minmax(200px,1fr));  
+    font-size: small;
 
 }
 footer{
@@ -202,11 +213,13 @@ footer{
 }
 .left{
     grid-column:1;
+
 }
 .right{
     grid-column:2;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
     grid-gap: 15px;
+    
    
 
 }
@@ -217,13 +230,11 @@ footer{
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
     grid-gap:5px;
-    min-width: 200px;
+    min-width: 400px;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 100px;
-    overflow: auto;
-    
-    
+    overflow: auto;  
 }
 input[type="text"] {
     width: 400px;
@@ -234,6 +245,7 @@ input[type="text"] {
     font-size: 1em;
     font-weight:bold;
     padding-bottom: .5em;
+   
 }
 .container-grid-loginBox input{
     height: 30px;
@@ -250,7 +262,6 @@ textarea {
     height: 100%;
 }
 .left-main-nav a {
-    text-transform: uppercase;
     letter-spacing: 0.2em;
     color: whitesmoke;
     display: block;
@@ -303,17 +314,143 @@ form {
     box-shadow:var(--dark);
     }
 
-    @media(max-width:600px){
+    @media only screen and (max-width:640px){
         .left{
             display:none;
+        }
+        .showcase{
+            grid-area: showcase;
+            min-height:14rem;
+            background: url(../img/00.png);
+            background-size: cover;
+            background-position: center;
+            display:flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            box-shadow: var(--shadow);
+        }
+        .showcase{
+            font-size: 2rem;
+            margin-bottom: 0;
+            color:whitesmoke;
+        }
+       
+        .showcase p{
+            font-size: 1rem;
+            margin-bottom: 0;
+            color: var(--light);
+        }
+        .portfolio{
+            display:grid;
+            grid-gap:20px;
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+        
+        }
+        .portfolio1{
+            display:grid;
+            grid-gap:20px;
+           
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+        
         }
         .container-grid{
             grid-template-columns: 1fr;
         }
+        .before-footer{
+            font-size:x-small;
+        }
+        .container-grid-loginBox{
+            text-align: left;
+            padding: .5rem;
+            border: thick;
+            display:grid;
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+            grid-gap:5px;
+            min-width: 250px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 100px;
+            overflow: auto;  
+        }
     }
-    @media(max-width:450px){
-        input[type="text"] {
-            width: 250px;
+    
+    @media only screen and (max-width: 768px) {
+        .portfolio{
+            display:grid;
+            grid-gap:10px;
+            width:100%;
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+        
+        }
+        .portfolio1{
+            display:grid;
+            grid-gap:10px;
+            width:100%;
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+        
+        }
+        .portfolio11{
+            display:grid;
+            grid-gap:10px;
+            width:100%;
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+        
+        }
+        .container-grid{
+            grid-template-columns: 1fr;
         }
 
     }
+    @media only screen and (max-width: 1024px) {
+        .portfolio{
+            display:grid;
+            grid-gap:10px;
+            width:100%;
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+        
+        }
+        .portfolio1{
+            display:grid;
+            grid-gap:10px;
+            width:100%;
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+        
+        }
+        .portfolio11{
+            display:grid;
+            grid-gap:10px;
+            width:100%;
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+        
+        }
+
+    }
+    @media only screen and (max-width:1200px){
+        input[type="text"] {
+            width: 250px;
+        } 
+        .portfolio1{
+            display:grid;
+            grid-gap:20px;
+            width:100%;
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+        
+        }
+        .portfolio11{
+            width:80%;
+            display:grid;
+            grid-gap:20px;
+            width:100%;
+            grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+        
+        }
+        .portfolio1 img{
+            width:150px;
+            height:150px;
+        }
+       
+    }
+
+    
+   

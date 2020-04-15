@@ -22,6 +22,14 @@ app.engine("handlebars",exphbs(
                     return '';
                 }
                 
+            },
+            if_clerk:function(val){
+                if(val=='clerk'){
+                    return `<li><a href="/product">Dashboard</a></li>` ;
+                }
+                else{
+                    return '<li><a href="/shoppingCart">Shopping Cart</a></li>'
+                }
             }
         }
     }

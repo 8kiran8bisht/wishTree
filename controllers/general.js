@@ -67,7 +67,7 @@ router.post("/general/signIn",(req,res)=>{
   let password="";
   if(req.body.userId=="") {
       count++;
-      e_userId="* Enter e-mail address or mobile phone number !";
+      e_userId="* Enter e-mail address !";
  }
  if(req.body.password=="") {
   count++;

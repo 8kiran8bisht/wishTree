@@ -265,7 +265,8 @@ productsModel.findById(req.params.id)
         title:req.body.title,
         description:req.body.description,
         price:req.body.price,
-        quantity:req.body.quantity
+        quantity:req.body.quantity,
+        userid:req.session.login._id
     }
 
     const order= new orderModel(newOrder);
@@ -277,7 +278,7 @@ productsModel.findById(req.params.id)
 });
 //-----------------------------------------------------------------------
 router.get('/shoppingCart',isAuthenticated,(req,res)=>{
-    orderModel.find({"status":1})
+    orderModel.find({"status":1,'userid':req.session.login._id})
     .then((orders)=>{
         let balance=0;
         let status=false;
@@ -332,12 +333,11 @@ router.post("/product/shoppingCart",isAuthenticated,(req,res)=>{
                 <br>
                 wishTree Registration Team`,
               };
-        //Asynchronus operation:we dont know how much time it will take
         
         sgMail.send(msg) 
             .then(()=>{
               //{"created": false}, {"$set":{"created": true}}
-                    orderModel.updateMany({"status":1},{"$set":{"status":0}})
+                  orderModel.updateMany({"status":1,'userid':req.session.login._id},{"$set":{"status":0}})
                     .then(()=>{
                         res.redirect('/');
                     })

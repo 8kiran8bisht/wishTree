@@ -10,15 +10,15 @@
         {{#each products}}
         <a href="{{page}}">
             <div class="box">
-                <h2 style="color:white;">{{this.category}}</h2>
-                <p><img src='../../uploads/{{img}}' height="300px"></p>
+                <h3 style="color:white;">{{this.category}}</h3>
+                <p><img src='../../uploads/{{img}}'></p>
             </div>
         </a>
         {{/each}}
     </section>
 <div class="homeSection" style="background-color:#AAABB8">
    <h2  style="text-align: left;">On Promotion</h2>
-        <section class="portfolio1" >
+        <section class="portfolio11" >
             {{#each promotion}}
                 <div class="box1">
                     <a href="/product/onPromotion"><img src='../../uploads/{{img}}'><br>See More</a>          
@@ -29,7 +29,7 @@
 </div>
 <div class="homeSection">
     <p><h2  style="text-align: left; color:white">Best Seller Section</h2></p>
-    <section class="portfolio1">
+    <section class="portfolio11">
         {{#each bestSeller}}
             <div class="box1"><a href="/product/bestSeller"><img src='../../uploads/{{img}}'>Shop Now</a></div>
         {{/each}}   

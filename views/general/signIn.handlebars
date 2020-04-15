@@ -1,17 +1,19 @@
 <br><br>  
-<div class="container-grid-loginBox">
+<div class="container-grid-loginBox" >
     <div class="right">
         <form action="/general/signIn" method="POST">
             <lable><h2 style="text-align: center;">Sign-In</h2></lable>
            <div class="error">{{errs}}</div>
+           <div class="error">{{e_message}}</div>
             <br>
-                <lable id="userId"><strong>address or mobile phone number</strong> </lable>
+                <lable id="userId"><strong>Enter your email address   </strong> </lable>
                 <br>
                 
                 <input type="userId" id="userId" name="userId" autofocus="on" tabindex="0" value="{{userId}}"  maxlength="100" >
             <br>
               <br>
-                <lable id="password"><strong>your Password</strong> </lable>
+              <div class="error">{{p_message}}</div>
+                <lable id="password"><strong>Enter your Password</strong> </lable>
                 <br>
                 <input type="password" id="password" name="password" autofocus="on" tabindex="0" value="{{password}}" >
             <br>
