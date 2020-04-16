@@ -63,8 +63,8 @@ router.post("/general/signIn",(req,res)=>{
   let count=0;
   let e_userId="";
   let e_password="";
-  let userId="";
-  let password="";
+ // let userId="";
+ // let password="";
   if(req.body.userId=="") {
       count++;
       e_userId="* Enter e-mail address !";
@@ -221,7 +221,6 @@ function passwordCheck(str) {
       }
       else
       {
-        console.log(req.body.email);
         userModel.findOne({email:req.body.email})
         .then((user)=>{
             const errs=[];

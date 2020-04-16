@@ -2,17 +2,17 @@
     <div class="container-grid">
     {{{nav}}}
         <div class="right">
-            <h2 style="text-align: left;"><a href="/product/products">Products</a> > Electronics</h2>
+            <h3 style="text-align: left;"><a href="/product/products">Products</a> > Electronics</h3>
             <section class="portfolio1">
-            {{#each products}}
-                <div class="box1">
-                     <p><h1 >{{title}}</h1></p>
-                    <p><img src='../../uploads/{{img}}' height="300px" ></p>
-                    <p><h2>CAD ${{price}}</h2></p>
-                    <p><a href="/product/productDescription/{{id}}"><input type="button" class="btn1" value="View"></a></p>
-                </div>
-            {{/each}}
-            </section>
+                    {{#each products}}
+                    <div class="box1">
+                        <p><h3 style="text-align: center;color:#313454">{{title}}</h3></p>
+                        <p><img src='../../uploads/{{img}}' height="200px" width="150px"></p>
+                        <p><h3>CAD ${{price}}</h3></p>
+                        <p><a href="/product/productDescription/{{id}}"><input type="button" class="btn1" value="View"></a></p>
+                    </div>
+                    {{/each}}
+                </section>
         </div>
     </div>
                 
