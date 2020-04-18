@@ -205,45 +205,27 @@ router.get("/editProduct/:id",isAuthenticated,(req,res)=>{
 });
 //------------------------------Update a product-------------------------------------
 router.put("/updateProduct/:id",isAuthenticated,(req,res)=>{
-    const extlist=['.JPEG','.JPG','.GIF','.PNG'];
-    const err=[];
-    if(extlist.includes(`${path.parse(req.files.img.name).ext}`.toUpperCase())!=true)
-    {
-        err.push("Only jpg, gif, png extention are allowed!");
-        res.render(`product/editProduct`,{
-            img:req.files.img.name,
-            productOn:req.body.productOn,
-            category:req.body.category,
-            title:req.body.title,
-            description:req.body.description,
-            price:req.body.price,
-            quantity:req.body.quantity,
-            css:"../../css/style.css",
-            err,
-        });
-    }
-    else{
-            req.files.img.name=`por_pic_${(req.params.id)}${path.parse(req.files.img.name).ext}`;
-            const pIdVal={
-                img:req.files.img.name,
-                productOn:req.body.productOn,
-                category:req.body.category,
-                title:req.body.title,
-                description:req.body.description,
-                price:req.body.price,
-                quantity:req.body.quantity
-            }
     
-            productsModel.updateOne({_id:(req.params.id)},pIdVal)
-            .then(()=>{
-                req.files.img.mv(`public/uploads/${req.files.img.name}`)
-                .then(()=>{
-                    res.redirect('/product');})
-                .catch(err=>"Error: unable to upload ");
-                
-            })
-            .catch(err=>{console.log(`Error: Error while Updating product ${err} `)})
+    req.files.img.name=`por_pic_${(req.params.id)}${path.parse(req.files.img.name).ext}`;
+    const pIdVal={
+        img:req.files.img.name,
+        productOn:req.body.productOn,
+        category:req.body.category,
+        title:req.body.title,
+        description:req.body.description,
+        price:req.body.price,
+        quantity:req.body.quantity
     }
+    
+    productsModel.updateOne({_id:(req.params.id)},pIdVal)
+    .then(()=>{
+        req.files.img.mv(`public/uploads/${req.files.img.name}`)
+        .then(()=>{
+            res.redirect('/product');})
+        .catch(err=>"Error: unable to upload ");
+        
+    })
+    .catch(err=>{console.log(`Error: Error while Updating product ${err} `)})
 })
 
 //-----------------------------Delete the product--------------------------------------
@@ -274,7 +256,7 @@ productsModel.findById(req.params.id)
     .catch(err=>`Error: Cant pull data bu Id from Db ${err}`)
   });
 /* this is done*/
-  router.post("/product/productDescription/",(req,res)=>
+  router.post("/product/productDescription/",isAuthenticated,(req,res)=>
 { 
    const newOrder={
       
@@ -282,7 +264,8 @@ productsModel.findById(req.params.id)
         title:req.body.title,
         description:req.body.description,
         price:req.body.price,
-        quantity:req.body.quantity
+        quantity:req.body.quantity,
+        userid:req.session.login._id
     }
 
     const order= new orderModel(newOrder);
@@ -295,7 +278,7 @@ productsModel.findById(req.params.id)
 //-----------------------------------------------------------------------
 
 router.get('/shoppingCart',isAuthenticated,(req,res)=>{
-    orderModel.find({"status":1})
+    orderModel.find({"status":1,"userid":`${req.session.login._id}`})
     .then((orders)=>{
         let balance=0;
         let status=false;
@@ -310,7 +293,8 @@ router.get('/shoppingCart',isAuthenticated,(req,res)=>{
                 description:order.description,
                 price:order.price,
                 quantity:order.quantity,
-                total:order.quantity*order.price
+                total:order.quantity*order.price,
+                userid:req.session.login._id
                 
             }
         })
@@ -335,10 +319,10 @@ router.get('/shoppingCart',isAuthenticated,(req,res)=>{
 })
 //--------------------Send the order Confermation ----------------------------------------------------------------
 router.post("/product/shoppingCart",isAuthenticated,(req,res)=>{
-    orderModel.find({"status":1,'userid':req.session.login._id})
+    orderModel.find({"userid":`${req.session.login._id}`})
     .then((orders)=>{
         let balance=0;
-        let str="<html><head> <style>.table{width: 60%;border-collapse: collapse;font-family: sans-serif;}.table td,.table th{padding: 10px;background-color: honeydew;border: 1px solid #ddd;text-align: center;}.table th{ background-color:rgb(85, 116, 85); color: white; }</style></head><body> <table class='table'><thead><th>S.No</th><th>Product</th><th>Unit Price</th> <th>Quantity</th><th>Total</th></thead><tbody>";
+        let str="<html><head> <style>.table{width: 80%;border-collapse: collapse;font-family: sans-serif;}.table td,.table th{padding: 10px;background-color: honeydew;border: 1px solid #ddd;text-align: center;}.table th{ background-color:rgb(85, 116, 85); color: white; }</style></head><body> <table class='table'><thead><th>S.No</th><th>Product</th><th>Unit Price</th> <th>Quantity</th><th>Total</th></thead><tbody>";
         for(let i=0;i<orders.length;i++){
             balance=balance+(orders[i].price*orders[i].quantity);
             str+=`<tr><td style="text-align: center;">${i+1}</td><td>${orders[i].title}</td><td style="text-align: right;">CAD$ ${orders[i].price}</td><td style="text-align: right;">${orders[i].quantity}</td><td style="text-align: right;">CAD$ ${orders[i].price*orders[i].quantity}</td></tr></strong>`
@@ -359,10 +343,10 @@ router.post("/product/shoppingCart",isAuthenticated,(req,res)=>{
               };
         //Asynchronus operation:we dont know how much time it will take
         
-        sgMail.send(msg) 
+       sgMail.send(msg) 
             .then(()=>{
               //{"created": false}, {"$set":{"created": true}}
-                  orderModel.updateMany({"status":1,'userid':req.session.login._id},{"$set":{"status":0}})
+                  orderModel.updateMany({"status":1},{"$set":{"status":0}})
                     .then(()=>{
                         res.redirect('/');
                     })

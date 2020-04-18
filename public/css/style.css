@@ -123,10 +123,13 @@ a{
 }
 
 .box1{
-    background: white;
+    background:white;
     text-align: center;
-    padding: .5rem 1.5rem;
-    box-shadow: var(--shadow);
+    
+}
+.box1 img{
+    height:200px;
+    
 }
 .info{
     background: var(--primary);
