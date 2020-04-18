@@ -114,6 +114,7 @@ a{
     font-size: small;
 
 }
+.before-footer a{color:whitesmoke}
 footer{
     margin-top:0;
     background: black;
