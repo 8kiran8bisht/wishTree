@@ -300,26 +300,19 @@ router.get('/shoppingCart',isAuthenticated,(req,res)=>{
         })
         if(balance>0)
         status=true;
-        orderModel.updateOne({"status":1},{"$set":{'userid':req.session.login._id}})
-        .then(()=>{
             res.render('product/shoppingCart',{
                 data:filteredOrder,
                 balance:balance,
                 status:status,
                 css:"../css/table.css"
             });
-        })
-        .catch(err=>console.log(`Error : Cant update ${err}`))
-
-        
-        
     })
     .catch(err=>`Error: error in fatching data from data base ${err}`);
     
 })
 //--------------------Send the order Confermation ----------------------------------------------------------------
 router.post("/product/shoppingCart",isAuthenticated,(req,res)=>{
-    orderModel.find({"userid":`${req.session.login._id}`})
+    orderModel.find({"userid":`${req.session.login._id}`,"status":1})
     .then((orders)=>{
         let balance=0;
         let str="<html><head> <style>.table{width: 80%;border-collapse: collapse;font-family: sans-serif;}.table td,.table th{padding: 10px;background-color: honeydew;border: 1px solid #ddd;text-align: center;}.table th{ background-color:rgb(85, 116, 85); color: white; }</style></head><body> <table class='table'><thead><th>S.No</th><th>Product</th><th>Unit Price</th> <th>Quantity</th><th>Total</th></thead><tbody>";
