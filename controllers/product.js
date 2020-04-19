@@ -131,9 +131,7 @@ router.post("/product/search",(req,res)=>{
 //------Add a product--------------
 router.get('/addProducts',isAuthenticated,(req,res)=>{
     res.render('product/addProducts',{
-        title:"Add Products",
-        css:"../../css/style.css",
-       
+        css:"../../css/style.css",   
     });
 
 });
@@ -145,10 +143,14 @@ router.post("/product/addProducts/",(req,res)=>
     {
         err.push("Only jpg, gif, png extention are allowed!");
         res.render('product/addProducts',{
-            title:"Add Products",
-            css:"../../css/style.css",
-            err,
-           
+            category:req.body.category,
+                title:req.body.title,
+                description:req.body.description,
+                price:req.body.price,
+                productOn:req.body.productOn,
+                quantity:req.body.quantity,    
+                css:"../../css/style.css",
+                err,
         });
     }
     else{

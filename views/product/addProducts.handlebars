@@ -4,39 +4,43 @@
         <lable></lable>
     <h1>Add Product</h1>
     <lable></lable>
-    <lable style="color:red">{{err}}</lable>
         <label><strong>Title</strong></label>
-        <input type="text" name="title" id="title" required>
+        <input type="text" name="title" id="title" value="{{title}}" required>
         <label></label><label></label>
         <label>Category</label>
         <select name="category" style="height: 30px;">
-            <option value="Baby-Care">Baby-Care</option>
-            <option value="Valentine's-Day">Valentine's-Day</option>
-            <option value="Electronics">Electronics</option>
-            <option value="Bags">Bags</option>
+            <option value="Baby-Care" {{if_eq category 'Baby-Care'}}>Baby-Care</option>
+            <option value="Valentine's-Day" {{if_eq category "Valentine's-Day"}}>Valentine's-Day</option>
+            <option value="Electronics" {{if_eq category 'Electronics'}}>Electronics</option>
+            <option value="Bags" {{if_eq category 'Bags'}}>Bags</option>
         </select>
     <label></label><label></label>
 
-        <label>Description</label>
-        <textarea id="description" name="description" required></textarea>
-<label></label><label></label>
+       <label>Description</label>
+        <textarea id="description" name="description" required>{{description}}</textarea>
+        <label></label><label></label>
+
         <label>Unit Price(CAD)</label>
-        <input type="text" name="price" id="price" pattern='[0-9]+(\.[0-9][0-9]?)?' required>
-<label></label><label></label>
+        <input type="text" name="price" id="price" value="{{price}}" required>
+        <label></label><label></label>
+
         <label>Quantity</label>
-        <input type="text" name="quantity" id="quantity" required> 
-<label></label><label></label>
+        <input type="text" name="quantity" id="quantity"value="{{quantity}}" required>
+        <label></label><label></label>
+        
         <label>Product On</label>
         <select name="productOn" style="height: 30px;">
-            <option value="noWhere">No where</option>
-            <option value="HomePage">Home Page</option>
-            <option value="Promotion">Promotion</option>
-            <option value="BestSeller">Best Seller</option>    
+            <option value="noWhere" {{if_eq productOn 'noWhere'}}>No where</option>
+            <option value="HomePage"  {{if_eq productOn 'HomePage'}}>Home Page</option>
+            <option value="Promotion"  {{if_eq productOn 'Promotion'}}>Promotion</option>
+            <option value="BestSeller"  {{if_eq productOn 'BestSeller'}}>Best Seller</option>    
         </select>
         <label></label><label></label>
+        <lable style="color:red">{{err}}</lable>
         <label>Product Image</label>
         <input  accept="image/*" type="file" name="img" id="img" required> 
         <label></label>
+        
         <input type="submit" class="btn1" value="Add Product">
  <br>
     <br>

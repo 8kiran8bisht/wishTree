@@ -166,16 +166,21 @@ router.post("/general/contactus",(req,res)=>{
       e1password="* Re-enter your Password !";
     }
     else if(req.body.r_password!=req.body.password){
+      count++;
       e1password="* Password didn't match !";
     }
     else{
         if(req.body.password.length<6 || req.body.password.length>12)
+        {
+          count++;
           epassword="* Password should be 6-12 charcters long !";
-       else if(passwordCheck(req.body.password)==false){
+          console.log(epassword);
+        }  
+        else if(passwordCheck(req.body.password)==false){
+          count++;
           epassword="* Password should have letters and numbers only!";
-      }
+        }
     }
-   
     if(req.body.phoneno=="") {
       count++;
       pNo="* enter your Phone Number !";
@@ -240,18 +245,14 @@ function passwordCheck(str) {
                     email:email,
                     message:message,
                     password:password,
-                    phoneno:phoneno,
-                    //dateCreated:moment().format('YYYY-DD-MM')
+                    phoneno:phoneno
                   }
 
                   const user=new userModel(newUser);
                   user.save()
                   .then(()=>{
-                    res.redirect("/");
-                  })
-                  .catch(err=>console.log(`Error to connect the data base${err}`))
                     const sgMail = require('@sendgrid/mail');
-                  sgMail.setApiKey(process.env.SEND_GRID_API_KEY);
+                   sgMail.setApiKey(process.env.SEND_GRID_API_KEY);
                   const msg = {
                       to:`${email}`,
                       from: `registration@wishtree.com`,
@@ -269,14 +270,16 @@ function passwordCheck(str) {
                     };
               //Asynchronus operation:we dont know how much time it wii take
               
-              sgMail.send(msg)
-              //checking 
+                  sgMail.send(msg)
                   .then(()=>{
                     res.redirect("/");
                   })
                   .catch(err=>{
                       console.log(`Error ${err}`);
                   });
+                  })
+                  .catch(err=>console.log(`Error to connect the data base${err}`))
+                  
                     
       }
 })
